@@ -1,0 +1,4 @@
+﻿  STOS.cpp
+C:\Users\mikol\source\repos\STOS\STOS\STOS.cpp(30,7): warning C4101: 'x': unreferenced local variable
+C:\Users\mikol\source\repos\STOS\STOS\STOS.cpp(154,8): warning C4101: 'x': unreferenced local variable
+  STOS.vcxproj -> C:\Users\mikol\source\repos\STOS\x64\Debug\STOS.exe

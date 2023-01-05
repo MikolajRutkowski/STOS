@@ -255,11 +255,19 @@ void ChoseGraph(int xxx) {
 				//display(tab, lenghtt, lenghtt);
 				// ten popierdlony krok
 				if (tab[i][i] == deep) {
+					if (i == 11) {
+						int xxxxxxx;
+					}
 					// szukamy przodka
+
 					int przodek = (i - 1) / 2;
-					przodek = przodek % (deep + 1);
-					tab[i][przodek] = 1;
-					tab[przodek][i] = 1;
+					
+					//cout << przodek;
+					przodek = przodek % ((deep* - 1)-1);
+					//cout << przodek ;
+					int z = przodek;
+					tab[i][z] = 1;
+					tab[z][i] = 1;
 				}
 
 
@@ -268,7 +276,10 @@ void ChoseGraph(int xxx) {
 			deep--;
 		}
 
+		for (int l = 0; l < lenghtt; l++)
+		{
 
+		}
 
 		//zliczanie 
 		for (int i = 0; i < lenghtt; i++)

@@ -9,7 +9,11 @@ int lenghtt  ;
 
 void display(int** number, int up , int down) {
 	cout << endl;
-	
+	for (int i = 0; i < up; i++)
+	{
+		cout << " " << i << "|";
+		
+	}cout << endl;
 	for (int j = 0; j < down; j++)
 	{
 
@@ -190,13 +194,17 @@ void ChoseGraph(int xxx) {
 		// Lu Su go
 		cin >> krokomierz;
 		lenghtt = 1;
-		int potegowacz = 1;
+		int potegowacz = 2;
 		for (int i = 2; i < krokomierz + 1; i++)
 		{
-			potegowacz = potegowacz * 2;
 			lenghtt += potegowacz;
+			potegowacz = potegowacz * 2;
+			
 		}
-		
+		//cout << potegowacz;
+		//cout << "\n";
+		//cout << lenghtt;
+		//cout << "\n";
 		int** tab = new int* [lenghtt];
 		for (int i = 0; i < lenghtt; i++)
 		{
@@ -230,9 +238,12 @@ void ChoseGraph(int xxx) {
 		potegowacz = 2;
 		int deep = -2;
 		//display(tab, lenghtt, lenghtt);
+		int ile = 4;
+		int ile_wczeœniej = 3;
+		int ileteraztworzymy = 2;
 		for (int k = 2; k < krokomierz; k++)
 		{
-			potegowacz = potegowacz * 2;
+			
 			for (int i = k -1; i < lenghtt; i++)
 			{
 				//cout << i;
@@ -255,9 +266,7 @@ void ChoseGraph(int xxx) {
 				//display(tab, lenghtt, lenghtt);
 				// ten popierdlony krok
 				if (tab[i][i] == deep) {
-					if (i == 11) {
-						int xxxxxxx;
-					}
+					
 					// szukamy przodka
 
 					int przodek = (i - 1) / 2;
@@ -274,12 +283,52 @@ void ChoseGraph(int xxx) {
 			}
 			
 			deep--;
+			//uzupe³nianie tabeli
+			
+			//										16 + 8 + 3 =27 
+				for (int i = ile_wczeœniej ; i < ile+ ile_wczeœniej  ; i++)
+				{
+					for (int j = 0; j < ile + ile_wczeœniej ; j++)
+					{
+						
+						if (i == 0 && j == i) { continue; }
+						int cel1 = 0;
+						int max1 = 100;						
+						int cel2 = 0;
+						if (tab[i][j] == 0) {
+							//
+							if (k == 3) {
+								//display(tab, lenghtt, lenghtt);
+							int xxxxxxxxxxxx = 0;
+						}
+							for (int  x = 0; x < ile_wczeœniej ; x++)
+							{
+								if (tab[i][x] > 0) {
+									if (tab[j][x] > 0) {
+										if (tab[i][x] + tab[j][x] < max1) {
+											max1 = tab[i][x] + tab[j][x];
+										}
+									}
+								}
+							}
+							
+							tab[i][j] = max1;
+							tab[j][i] = max1;
+						}
+						
+						
+						
+					}
+					
+				}
+				ile_wczeœniej = ile_wczeœniej + ile;
+				ile = ile * 2;
+				//cout << ile;
+				//display(tab, lenghtt, lenghtt);
 		}
-
-		for (int l = 0; l < lenghtt; l++)
-		{
-
-		}
+		
+		//	cout << i;
+				//cout << "\n";
 
 		//zliczanie 
 		for (int i = 0; i < lenghtt; i++)
@@ -295,7 +344,7 @@ void ChoseGraph(int xxx) {
 
 			}
 		}
-		display(tab, lenghtt, lenghtt);
+		//display(tab, lenghtt, lenghtt);
 		cout << licznik / 2;
 		cout << "\n";
 
